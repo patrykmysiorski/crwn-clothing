@@ -6,7 +6,6 @@ import ShopPage from "./pages/homepage/shop/Shop";
 import Header from "./components/header/Header";
 import SignInSignUp from "./pages/SingInSignUp/SignInSignUp";
 import { connect } from "react-redux";
-import { setCurrentUser } from "./redux/user/userActions";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/userSelectors";
 import CheckoutPage from "./components/checkout/Checkout";
@@ -37,8 +36,4 @@ const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);
